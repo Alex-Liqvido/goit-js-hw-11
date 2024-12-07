@@ -19,8 +19,10 @@
   "dependencies": {
     "css-loader": "^7.1.2",
     "izitoast": "^1.4.0",
+    "ng2-izitoast": "^2.0.0",
     "simplelightbox": "^2.14.3",
     "vite-plugin-full-reload": "^1.2.0",
-    "vite-plugin-html-inject": "^1.1.2"
+    "vite-plugin-html-inject": "^1.1.2",
+    "vue-izitoast": "^1.2.1"
   }
 }
