@@ -1,27 +1,20 @@
-export const searchImage = search => {
-  const searchParams = new URLSearchParams({
-    key: '47510144-3a7cfc25704c8cb682269df00',
-    q: search,
-    image_type: 'photo',
-    orientation: 'horizontal',
-    safesearch: true,
-  });
+const BASE_URL = "https://pixabay.com/api/";
 
-  const url = `https://pixabay.com/api/?${searchParams}`;
 
-  const options = {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      Host: 'http://localhost:5173',
-      Origin: 'https://pixabay.com/api',
-    },
-  };
+export const pixabayApi = searchQuery => {
+    const params = new URLSearchParams({
+    key: "47362908-c1a65ba58d6ddf3afd8961379",
+    q: searchQuery,
+    image_type: "photo",
+    orientation: "horizontal",
+    safesearch: "true",
+})
 
-  return fetch(url, options).then(response => {
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-    return response.json();
-  });
-};
+return fetch(`${BASE_URL}?${params}`)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+})
+}
